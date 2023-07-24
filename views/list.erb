@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>NOME</th>
+      <th>FILA</th>
+      <th>QUANTIDADE DE PROCESSOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @grouped_jobs.each do |job| %>
+      <tr>
+        <td><a href="/scheduled_jobs_group/details/<%= job[:name] %>"><%= job[:name] %></a></td>
+        <td><%= job[:queue] %></td>
+        <td><%= job[:count] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
